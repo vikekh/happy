@@ -12,9 +12,15 @@ namespace Happy.Web.Controllers
 {
     public class EmotionsController : ApiController
     {
-        public int PostEmotion(Emotion emotion)
+        [HttpPost]
+        public HttpResponseMessage PostEmotion([FromBody] Emotion emotion)
         {
-            return emotion.NormalizedValue;
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }
 }

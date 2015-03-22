@@ -13,24 +13,24 @@ namespace Happy.Web.Models
             }
         }
 
-        private int value;
+        private int _value;
         public int Value {
             get {
-                if (value < 1)
+                if (_value < 1)
                 {
                     return 1;
                 }
-                else if (value > 5)
+                else if (_value > 5)
                 {
                     return 5;
                 }
 
-                return value;
+                return _value;
             }
 
             set
             {
-                this.value = value;
+                _value = value;
             }
         }
     }
