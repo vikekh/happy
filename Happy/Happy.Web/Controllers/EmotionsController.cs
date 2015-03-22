@@ -8,8 +8,9 @@ using System.Web.Http;
 
 namespace Happy.Web.Controllers
 {
-    public class EmotionController : ApiController
+    public class EmotionsController : ApiController
     {
+        [HttpPost]
         public async Task<int> AddEmotion(int emotion)
         {
             return emotion;
