@@ -17,10 +17,10 @@ namespace Happy.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            return new HttpResponseMessage(HttpStatusCode.Created);
+            return Request.CreateResponse(HttpStatusCode.Created, emotion);
         }
     }
 }

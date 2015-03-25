@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,31 +8,7 @@ namespace Happy.Web.Models
 {
     public class Emotion
     {
-        public int NormalizedValue {
-            get {
-                return Value - 3;
-            }
-        }
-
-        private int _value;
-        public int Value {
-            get {
-                if (_value < 1)
-                {
-                    return 1;
-                }
-                else if (_value > 5)
-                {
-                    return 5;
-                }
-
-                return _value;
-            }
-
-            set
-            {
-                _value = value;
-            }
-        }
+        [Range(-2, 2)]
+        public int Value { get; set; } 
     }
 }
