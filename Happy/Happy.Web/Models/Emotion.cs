@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Happy.Web.Models
 {
     public class Emotion
     {
+        public DateTime Created { get; set; }
+
         [Range(-2, 2)]
         public int Value { get; set; } 
     }
